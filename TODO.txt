@@ -1,0 +1,10 @@
+GTK calculator TODO :
+
+- document all of calculator.h
+- document all bugs in calculator.c
+
+- document all bugs in graphicutils.c
+
+- document all bugs in sighandle.c
+
+- document all of stack.h
