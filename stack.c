@@ -2,7 +2,8 @@
  *
  * Author : Emmett James Kopczynski
  *
- * To Do : DONE
+ * To Do :
+ *     - Make Error Messages print to stderr
  *
  * Known Bugs : NONE
  */
@@ -49,7 +50,7 @@ char * pop_stack(Stack *stack){
     return returnable;
 }
 
-/* push_stack : pushes a string onto the stack, asumes the given string has no \n and a \0 at the end */
+/* push_stack : pushes a string onto the stack, asumes the given string has no \n or \0 at the end */
 void push_stack(Stack *stack, char toAdd[]){
     if(strlen(toAdd) > MAXEQUATIONLEN){
         printf("STRING TO LONG FOR STACK\n");

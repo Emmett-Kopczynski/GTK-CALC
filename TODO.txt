@@ -3,4 +3,4 @@ GTK calculator TODO :
 - document all of calculator.h
 - document all bugs in calculator.c
 
-- document all of stack.h
+- FINISH TODOS IN stack.c
