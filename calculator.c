@@ -56,13 +56,16 @@ void delete_external_equation(){
 void solve_external_equation(char *answer){
 
     /* TODO add syntax checking for the equation */
-    printf("%d\n", check_paranthesis(infix_equation));
-    if( check_paranthesis(infix_equation) < 0){
+    if( check_paranthesis(infix_equation) < 0){ /* paranthasis checking */
         answer[0] = '\0';
         strcpy(answer, "PARANTHESIS ERROR");
         return;
     }
-    /* TODO add a divide by 0 checker */
+    if(zero_div_check(infix_equation) < 0){ /* divide by zero checking */
+        answer[0] = '\0';
+        strcpy(answer, "CANNOT DIVIDE BY ZERO");
+        return;
+    }
     /* TODO add a thing that makes 8(8+2) into 8*(8+2) if that makes sense */
 
     char postfix[MAXEQUATIONLEN * 2];
@@ -71,9 +74,21 @@ void solve_external_equation(char *answer){
     sprintf(answer, "%f", ansNum);
 }
 
-/* TODO document */
+/* zero_div_check : returns zero if infix does not divide by zero, otherwise returns -1 */
 int zero_div_check(char *infix){
-    return -1;
+    char prev_term[MAXEQUATIONLEN] = "\0";
+    char cur_term[MAXEQUATIONLEN] = "\0";
+    int index = 0;
+    while(index < strlen(infix)){
+        index = parse_term(infix, index, cur_term);
+        if(prev_term[0] == '/' && atof(cur_term) == 0){
+            return -1;
+        }
+
+        strcpy(prev_term, cur_term);
+    }
+
+    return 0;
 } /* TODO implement */
 
 /* TODO document */
