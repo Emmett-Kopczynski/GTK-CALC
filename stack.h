@@ -4,22 +4,31 @@
 /* inclusions */
 #include "calculator.h"
 
-/* TODO document stack */
+/* Stack : a basic stack data structure for storing strings */
 typedef struct stack{
     int size;
     char arrayStack[MAXEQUATIONLEN][MAXEQUATIONLEN]; /* the top is arrayStack[size - 1] */
 
-    char * (*peek)(struct stack *stack);
+    /* TODO document */
+    char * (*peek)(struct stack *stack); 
+    
+    /* TODO document */
     char * (*pop)(struct stack *stack);
+    
+    /* TODO document */
     void (*push)(struct stack *stack, char toAdd[]);
+    
+    /* TODO document */
     int (*isEmpty)(struct stack *stack);
+    
+    /* TODO document */
     int (*getSize)(struct stack *stack);
 } Stack;
 
-/* TODO document construct_stack_new */
+/* construct_stack_new : constructor method for the stack */
 Stack construct_stack_new();
 
-/* TODO document peek_stack */
+/* peek_stack :  */
 char * peek_stack(Stack *stack);
 
 /* TODO document pop_stack */
