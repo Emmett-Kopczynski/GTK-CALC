@@ -6,15 +6,12 @@
  * TO DO:
  *
  *  TO IMPLEMENT :
- *      - zero_div_check
  *      - par_mult
  *  TO DOCUMENT :
- *     - zero_div_check
  *     - par_mult
  *
  * Known Bugs :
  *   - Starting with a negative number causes a single stack overflow error
- *   - dividing by zero results in "inf", where it should give an error to the screen
  *   - .^. always gives an answer of 1, which is obviously false, this should give an error screen, try to solve this for more than just that case
  *   - 8(7 + 8) causes an error, make function to change it to 8*(7 + 8)
  */
@@ -89,7 +86,7 @@ int zero_div_check(char *infix){
     }
 
     return 0;
-} /* TODO implement */
+}
 
 /* TODO document */
 int par_mult(char *infix){ /* edits the infix_equaton to have paranthesis mult,
