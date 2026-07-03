@@ -2,18 +2,19 @@
 #define CALCULATOR_H_
 
 /* symbolic constants */
-#define MAXEQUATIONLEN 200 /* TODO document */
+#define MAXEQUATIONLEN 200 /* MAXEQUATIONLEN : the maximum length of external equation */
 
 /* TODO document infix_equation */
 extern char infix_equation[MAXEQUATIONLEN];
 
 /* concat_external_equation : add the given character to the external equation
- * TODO document concat_external_equation
+ *
+ * Arguments :
+ *     - addition : type char : the character being put at the end of the equation
  */
 void concat_external_equation(char addition);
 
-/*  delete_last_external_equation : removes last character from the external equation
- */
+/*  delete_last_external_equation : removes last character from the external equation */
 void delete_last_external_equation();
 
 /* delete_external_equation :  makes the external equation blank
@@ -21,8 +22,14 @@ void delete_last_external_equation();
 void delete_external_equation();
 
 /* solve_external_equation : solves the external equation
+ *
  * NOTE : utilizes to_postfix_expression and solve_postfix_expression
- * TODO finish noting later
+ *
+ * Arguments :
+ *     - answer : char * : the place we want the answer written to
+ *
+ * NOTE : the equation being solved comes from the external
+ * variable string infix_equation
  */
 void solve_external_equation(char *answer);
 
